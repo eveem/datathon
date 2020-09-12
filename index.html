@@ -421,11 +421,11 @@
                 </div>
             </div>
             <h2>
-                <u>งบประมาณที่สำนักงานเขตได้รับ และเสียงของคนในแต่ละเขตบน social</u>
+                <u>งบประมาณที่เขตบางนาได้รับ และเสียงของคนในเขตบางนาบน social</u>
             </h2>
-            <div>
-                <div id="bg-bangrak" style="height:400px; width:40%;"></div>
-                <div id="pb-bangrak" style="height:400px; width:40%;"></div>
+            <div style="display:flex; justify-content: space-between;">
+                <div id="bg-bangrak" style="height:600px; width:50%;"></div>
+                <div id="pb-bangrak" style="height:600px; width:50%;"></div>
             </div>
             <h2>
                 <u>ความต้องการของคนในโซเชียลมีเดีย</u>
@@ -1547,7 +1547,7 @@
                 hidePopup();
             });
             path.addEventListener("click", () => {
-                $('html, body').animate({ scrollTop: 1650 }, 'slow')
+                $('html, body').animate({ scrollTop: 3750 }, 'slow')
             });
         }
 
@@ -1737,17 +1737,32 @@
         var app = {};
         option = null;
         option = {
-            yAxis: {
-                type: 'category',
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            grid: {
+                left: '1%',
+                containLabel: true
             },
             xAxis: {
-                type: 'value'
+                type: 'value',
             },
-            series: [{
-                data: [120, 200, 150, 80, 70, 110, 130],
-                type: 'bar'
-            }]
+            yAxis: {
+                type: 'category',
+                data: ['งานบริหารการจัดเก็บรายได้', 'งานบริหารการคลัง', 'งานควบคุมอนามัย', 'งานทะเบียน', 'งานการระบายน้ำและแก้ไขปัญหาน้ำท่วม', 'งานบริหารและบังคับการเทศกิจ', 'งานปกครอง', 'งานพัฒนาชุมชน', 'งานปลูกและบำรุงรักษาต้นไม้', 'งานการโยธา', 'งานบริหารการศึกษา', 'งานรักษาความสะอาด']
+            },
+            series: [
+                {
+                    name: '2562',
+                    type: 'bar',
+                    data: [4716500, 5061400, 5727400, 6969600, 8188200, 13736100, 18522800, 19068200, 19600000, 32924900, 68858000, 109600900],
+                    barGap: 0
+                }
+            ],
+            color: ["#d8d3cd", "#797a7e"]
         };
         ;
         if (option && typeof option === "object") {
@@ -1759,17 +1774,32 @@
         var app = {};
         option = null;
         option = {
-            yAxis: {
-                type: 'category',
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            grid: {
+                left: '1%',
+                containLabel: true
             },
             xAxis: {
-                type: 'value'
+                type: 'value',
             },
-            series: [{
-                data: [120, 200, 150, 80, 70, 110, 130],
-                type: 'bar'
-            }]
+            yAxis: {
+                type: 'category',
+                data: ['ขยะ', 'น้ำท่วม', 'การว่างงาน', 'ไฟฟ้า', 'อากาศ', 'การแพทย์', 'การท่องเที่ยว', 'การศึกษา', 'ระบบขนส่งสาธารณะ', 'SEX', 'ถนน', 'ความปลอดภัย']
+            },
+            series: [
+                {
+                    name: '2562',
+                    type: 'bar',
+                    data: ['189', '261', '312', '431', '784', '1409', '2205', '3888', '4843', '14774', '27549', '27969'],
+                    barGap: 0
+                }
+            ],
+            color: ["#797a7e"]
         };
         ;
         if (option && typeof option === "object") {
