@@ -73,6 +73,14 @@ img:last-of-type {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 
+.detail {
+  width: 50%;
+  padding: 2%;
+  border-radius: 5px;
+  background: rgba(240, 230, 220, 0.7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
 .slide:nth-child(2n) .title {
   margin-left: 0;
   margin-right: auto;
@@ -125,6 +133,14 @@ img:last-of-type {
 }
 
 path.district:hover {
-  fill: darkseagreen;x
+  fill: darkseagreen;
   transition: fill 1s ease;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: orange;
 }
