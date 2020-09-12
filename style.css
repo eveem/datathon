@@ -1,135 +1,194 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt');
+@import url("https://fonts.googleapis.com/css2?family=Prompt");
 
-html {
-  height: 100%;
-  overflow: hidden;
-}
-
-body {
+* {
   margin: 0;
   padding: 0;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  font-family: Prompt;
-}
-
-h1 {
-  font-size: 250%;
-}
-
-p {
-  font-size: 140%;
-  line-height: 150%;
-  color: #333;
-}
-
-.slide {
-  position: relative;
-  padding: 25vh 10%;
-  min-height: 100vh;
-  width: 100vw;
   box-sizing: border-box;
-  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.7);
-  transform-style: inherit;
+  font-family: prompt;
 }
-
-img {
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  width: 320px;
-  height: 240px;
-  transform: translateZ(0.25px) scale(0.75) translateX(-94%) translateY(-100%)
-    rotate(2deg);
-  padding: 10px;
-  border-radius: 5px;
-  background: rgba(240, 230, 220, 0.7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+.nav-wrap {
+  width: 96%;
+  max-width: 1000px;
+  margin: auto;
 }
-
-img:last-of-type {
-  transform: translateZ(0.4px) scale(0.6) translateX(-104%) translateY(-40%)
-    rotate(-5deg);
-}
-
-.slide:before {
-  content: "";
-  position: absolute;
+nav {
+  font-size: 30px;
+  padding: 40px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+  max-width: 1000px;
+  margin: auto;
+  position: fixed;
   top: 0;
-  bottom: 0;
+  user-select: none;
+  z-index: 9999;
+  transition: 0.3s;
+}
+#logo {
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: 4px;
+  padding: 15px;
+}
+.navbar {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+.nav-line {
+  width: 96%;
+  max-width: 1000px;
+  margin: auto;
+  height: 127px;
+  background: white;
+  border-bottom: 7px solid black;
+  position: fixed;
+  z-index: 999;
+  transition: 0.3s;
+  transform: scalex(1);
+}
+.link {
+  position: relative;
+}
+.link span {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  padding: 15px 40px;
+  line-height: 50px;
+  transition: 0.3s;
+}
+.menu {
+  border-bottom: solid black;
+  font-size: 30px;
+  background: black;
+  color: white;
+  position: absolute;
+  top: 84px;
   left: 0;
-  right: 0;
-  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.7);
+  display: none;
+  width: 100%;
+}
+ul {
+  list-style: none;
+  font-size: 22px;
+}
+li {
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.title {
-  width: 50%;
-  padding: 5%;
-  border-radius: 5px;
-  background: rgba(240, 230, 220, 0.7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wrapper {
+  width: 96%;
+  max-width: 900px;
+  font-size: 30px;
+  padding: 30vh 0;
+}
+h1 {
+  font-size: 150px;
+}
+h2 {
+  margin-top: 70px;
+}
+h2,
+p,
+img,
+svg,
+canvas {
+  opacity: 0;
+  position: relative;
+  top: 100px;
+  margin-bottom: 40px;
+  transition: 0.4s;
+  width: 100%;
+  max-width: 900px;
+}
+img {
+  margin: 10px 0 50px;
+}
+.active {
+  background: gray;
+  color: white;
+}
+.extend {
+  transform: scaleX(2) translateY(-40px);
+  background: black;
+}
+.lift {
+  padding-top: 0;
+  background: transparent;
+  color: white;
 }
 
-.detail {
-  width: 50%;
-  padding: 2%;
-  border-radius: 5px;
-  background: rgba(240, 230, 220, 0.7);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+.show {
+  opacity: 1;
+  top: 0;
 }
-
-.slide:nth-child(2n) .title {
-  margin-left: 0;
-  margin-right: auto;
+.burger-wrap {
+  margin-top: 25px;
+  display: none;
 }
-
-.slide:nth-child(2n + 1) .title {
-  margin-left: auto;
-  margin-right: 0;
+.burger {
+  width: 50px;
+  height: auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
 }
-
-.slide,
-.slide:before {
-  background: 50% 50% / cover;
+.line-1,
+.line-2,
+.line-3 {
+  width: 100%;
+  height: 4px;
+  background: black;
+  transition: 0.3s;
 }
-
-.header {
-  text-align: center;
-  font-size: 175%;
-  color: #fff;
-  text-shadow: 0 2px 2px #000;
+.line-2,
+.line-3 {
+  margin-top: 10px;
 }
-
-#title {
-  background-image: url("assets/header.jpg");
-  z-index: 2;
+.cross .line-1 {
+  transform: translateY(14px) rotate(45deg);
 }
-
-#title h1 {
-  transform: translateZ(0.25px) scale(0.75);
-  transform-origin: 50% 100%;
+.cross .line-2 {
+  opacity: 0;
 }
-
-#slide1:before {
-  background-image: url("assets/bg_1.jpeg");
-  transform: translateZ(-1px) scale(2);
+.cross .line-3 {
+  transform: translateY(-14px) rotate(-45deg);
 }
-
-#slide2 {
-  background-image: url("assets/bg_2.jpg");
-  z-index: 2;
+.lift .burger div {
+  background: white;
 }
-
-#slide3:before {
-  background-image: url("https://lorempixel.com/640/480/abstract/5/");
-  transform: translateZ(-1px) scale(2);
-}
-
-#slide4 {
-  background: #222;
+@media (max-width: 800px) {
+  .navbar {
+    display: none;
+  }
+  .burger-wrap {
+    display: block;
+  }
+  .showBar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 3%;
+    top: 120px;
+    background: black;
+    color: white;
+    width: 100%;
+  }
+  .menu {
+    left: 50%;
+    top: 0;
+    z-index: 99999;
+  }
 }
 
 path.district:hover {
@@ -137,10 +196,149 @@ path.district:hover {
   transition: fill 1s ease;
 }
 
-.bar {
-  fill: steelblue;
+.carrousel {
+  background: #ffffff;
+  text-align: center;
+  padding: 4em 0;
+  height: 800px;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.carrousel h2 {
+  margin: 0;
+  margin-top: -1.7em;
+  padding: 0;
+  font-size: 1em;
+  text-align: center;
+  color: #bbbbbb;
+}
+.carrousel .slides {
+  width: 400%;
+  left: 0;
+  padding-left: 0;
+  padding-top: 1em;
+  overflow: hidden;
+  list-style: none;
+  position: relative;
+
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+}
+.carrousel .slides li {
+  width: 25%;
+  position: relative;
+  float: left;
+}
+.carrousel li p {
+  margin-top: 0;
+}
+.carrousel li q {
+  max-width: 90%;
+  margin: auto;
+  color: #666666;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.carrousel li img {
+  width: 3em;
+  height: 3em;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+.carrousel li span.author {
+  margin-top: 0.5em;
+  font-size: 1.2em;
+  color: #777777;
+  display: block;
+}
+.carrousel .slidesNavigation {
+  display: block;
+  list-style: none;
+  text-align: center;
+  bottom: 1em;
+  /*--- Centering trick---*/
+  /* Absolute positioning*/
+  position: absolute;
+  /* Abosulte positioning*/
+  width: 104px; /*This width  is the addition of the width of all the navigations dots - So in this case is   104 because the navigation dots are 26px (width:10px and 6px marginleft + 6 px marginright) and there are 4 dots so 4x26=104 */
+  left: 50%; /*Centering de element*/
+  margin-left: -52px; /*adjusting the centering by applying a negative margin of half of the width*/
+}
+.carrousel input {
+  display: none;
+}
+.carrousel .slidesNavigation label {
+  float: left;
+  margin: 6px;
+  display: block;
+  height: 10px;
+  width: 10px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: solid 2px #2980b9;
+  font-size: 0;
+}
+/* You have to repeat this with each slide
+  TODO: make it easier with SCSS
+  25% movement 100/slides-num
+  */
+#radio-1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#radio-2:checked ~ .slides {
+  transform: translateX(-25%);
+}
+#radio-3:checked ~ .slides {
+  transform: translateX(-50%);
+}
+#radio-4:checked ~ .slides {
+  transform: translateX(-75%);
 }
 
-.bar:hover {
-  fill: orange;
+.carrousel .slidesNavigation label:hover {
+  cursor: pointer;
 }
+/* You have to repeat this with each slide/dot */
+.carrousel #radio-1:checked ~ .slidesNavigation label#dotForRadio-1,
+.carrousel #radio-2:checked ~ .slidesNavigation label#dotForRadio-2,
+.carrousel #radio-3:checked ~ .slidesNavigation label#dotForRadio-3,
+.carrousel #radio-4:checked ~ .slidesNavigation label#dotForRadio-4 {
+  background: #2980b9;
+}
+
+@media (max-width: 796px) {
+  .carrousel {
+    height: 8.5em;
+  }
+}
+@media (max-width: 480px) {
+  .carrousel li p {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .carrousel li q {
+    font-size: 1em;
+  }
+  .carrousel li img {
+    width: 2em;
+    margin-left: -1em;
+    margin-right: 0.25em;
+  }
+}
+
+.detail {
+	width: 25%;
+	height: 300px;
+	margin-top: 50px;
+	padding: 2%;
+	border-radius: 5px;
+	/* background: rgba(250, 250, 250, 0.7); */
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  }
