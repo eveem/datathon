@@ -430,15 +430,13 @@
             <h2>
                 <u>ความต้องการของคนในโซเชียลมีเดีย</u>
             </h2>
-            <div id="container" style="height:500px;"></div>
+            <div id="container" style="height:400px;"></div>
             <h2>
                 <u>เจาะลึกเฉพาะด้านที่มีคนพูดอย่างสม่ำเสมอตลอดปี</u>
             </h2>
-            <div id="container-1" style="height:500px;"></div>
+            <div id="container-1" style="height:400px;"></div>
+            <div id="voicesex" style="height:400px; width:100%;"></div>
             <div class="tradingcard" id="tdc_2" style="text-align:center; margin-top:20px;">
-                <h3><b>สิ่งที่ประชาชนอยากให้แก้ไขในด้านนี้</b></h3>
-                <p style="font-size:18px;">1. อยากให้ Sex Toys ถูกกฎหมาย 35%<br>2. กฎหมายจัดระเบียบการค้าประเวณี
-                    30%<br>3. พื้นที่เสรีภาพเรื่องเพศ 25%<br>4. สร้างบทลงโทษที่มากขึ้น 10%</p>
             </div>
         </div>
     </div>
@@ -1893,6 +1891,41 @@
             series: [
                 { name: 'SEX', type: 'line', smooth: true, data: [2563, 2732, 2652, 3344, 4329, 3258, 3577, 16288, 22941, 22453, 20317, 11931] },
             ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+
+        var dom = document.getElementById("voicesex");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            yAxis: {
+                type: 'category',
+                data: ['สร้างบทลงโทษที่มากขึ้น', 'พื้นที่เสรีภาพเรื่องเพศ', 'กฎหมายจัดระเบียบการค้าประเวณี', 'อยากให้ Sex Toys ถูกกฎหมาย']
+            },
+            xAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: [10, 25, 30, 35],
+                type: 'bar',
+                barWidth: '60%',
+            }],
         };
         ;
         if (option && typeof option === "object") {
