@@ -176,16 +176,14 @@
                 </g>
             </g>
         </svg>
-        <div class="detail" id="detail_1" style="position:absolute; top:120px; left:2000px; visibility:hidden;">
+        <div class="detail" id="detail_1" style="position:absolute; top:80px; left:2000px; visibility:hidden;">
             <h1>งบประมาณของเขต xxx</h1>
-            <div id="container" style="height: 300px"></div>
+            <div id="container" style="height: 350px; margin-top:-50px;"></div>
         </div>
         <div class="detail" id="detail_2"
-            style="position:absolute; margin-top:60px; top:550px; left:2000px; visibility:hidden;">
-            <h1>Slide 3</h1>
-            <p>Lorem ipsum dolor sit amet, in velit iudico mandamus sit, persius dolorum in per, postulant mnesarchum cu
-                nam. Malis movet ornatus id vim, feugait detracto est ea, eam eruditi conceptam in. Ne sit explicari
-                interesset. Labores perpetua cum at. Id viris docendi denique vim.</p>
+            style="position:absolute; margin-top:60px; top:510px; left:2000px; visibility:hidden;">
+            <h1>เสียงใน social เกี่ยวกับปัญหาในเขต xxx</h1>
+            <div id="container_2" style="height: 350px; margin-top:-50px;"></div>
         </div>
     </div>
 
@@ -1301,7 +1299,29 @@
                 type: 'bar'
             }]
         };
-        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+
+        var dom = document.getElementById("container_2");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            yAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            xAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: [120, 200, 150, 80, 70, 110, 130],
+                type: 'bar'
+            }],
+            color: ['#3398DB']
+        };
+        
         if (option && typeof option === "object") {
             myChart.setOption(option, true);
         }
