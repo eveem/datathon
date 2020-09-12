@@ -44,7 +44,22 @@
             <h2>
                 <u>รายละเอียดงบประมาณตามสำนัก</u>
             </h2>
-            <div id="budget-per-district" style="height:400px; width:100%; display:inline-flex;"></div>
+            <div id="budget-per-district" style="height:500px; width:100%;"></div>
+            <div class="tradingcard" id="tdc"
+                style="position:absolute; right:100px; top:2500px; visibility:hidden; width:400px;">
+                <h3><b>สำนักการจราจรและขนส่ง</b></h3>
+                <p style="font-size:18px;">1. โครงการระบบขนส่งมวลชนกรุงเทพมหานครส่วนต่อขยายสายสีลม (ตากสิน-เพชรเกษม)
+                    และบริหารจัดการเดินรถ 733,970,976 บาท<br>2. งานการขนส่ง 620,173,965 บาท<br>3. งานวิศวกรรมจราจร
+                    619,249,730 บาท<br>4. งานเทคโนโลยีจราจร 566,490,700 บาท<br>5.
+                    โครงการบริหารจัดการระบบขนส่งมวลชนกรุงเทพมหานคร 510,616,820 บาท<br> 6.
+                    โครงการจัดหาพร้อมติดตั้งกล้องโทรทัศน์วงจรปิด (CCTV) บริเวณสวนสาธารณะในพื้นที่กรุงเทพมหานคร
+                    121,119,000 บาท</p>
+            </div>
+            <div class="tradingcard" id="tdc_1" style="visibility:hidden; text-align:center;">
+                <h3><b>ปัญหาที่เกี่ยวกับการจราจรและขนส่งที่ถูกพูดถึง</b></h3>
+                <p style="font-size:18px;">1. รถติด 50.94%&nbsp&nbsp&nbsp2. รถเมล์เก่า 35.03%&nbsp&nbsp&nbsp3. BTS
+                    คนเยอะ 3.46%&nbsp&nbsp&nbsp4. MRT คนเยอะ 2.88%</p>
+            </div>
             <h2>
                 <u>งบประมาณที่สำนักงานเขตได้รับ และเสียงของคนในแต่ละเขตบน social</u>
             </h2>
@@ -417,31 +432,29 @@
                     <label for="radio-4" id="dotForRadio-4"></label>
                 </div>
             </div> -->
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate dolor enim quidem veniam,
                 vitae sint quos! Cum possimus provident iusto suscipit officia quas assumenda facere dicta, veritatis
                 vero! Accusantium.</p>
             <h2>
                 <u>งบประมาณที่สำนักงานเขตได้รับ และเสียงของคนในแต่ละเขตบน social</u>
             </h2>
-            <div style="display:flex; justify-content:space-between; margin-top:-35px; margin-bottom:20px;">
-                <div id="container_1" style="height:400px; width:35%; display:inline-flex;"></div>
+            <div>
+                <div id="bg-bangrak" style="height:400px; width:40%;"></div>
+                <div id="pb-bangrak" style="height:400px; width:40%;"></div>
             </div>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate dolor enim quidem veniam,
-                vitae sint quos! Cum possimus provident iusto suscipit officia quas assumenda facere dicta, veritatis
-                vero! Accusantium.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fugit iusto cum ut delectus minus non
-                asperiores, officiis sed animi veniam, itaque commodi tenetur quae laboriosam repellendus facilis
-                doloremque laborum. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Perferendis cum repellendus perspiciatis consectetur laudantium nesciunt
-                aliquam temporibus illo excepturi saepe quas nihil, optio laboriosam dolore quae, non hic, qui eveniet.
-            </p>
-            <img src="https://images.unsplash.com/photo-1447078806655-40579c2520d6?dpr=1&auto=compress,format&fit=crop&w=1050&h=&q=80&cs=tinysrgb&crop="
-                alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate dolor enim quidem veniam,
-                vitae sint quos! Cum possimus provident iusto suscipit officia quas assumenda facere dicta, veritatis
-                vero! Accusantium.</p>
+            <h2>
+                <u>ความต้องการของคนในโซเชียลมีเดีย</u>
+            </h2>
+            <div id="container" style="height:500px;"></div>
+            <h2>
+                <u>เจาะลึกเฉพาะด้านที่มีคนพูดอย่างสม่ำเสมอตลอดปี</u>
+            </h2>
+            <div id="container-1" style="height:500px;"></div>
+            <div class="tradingcard" id="tdc_2" style="text-align:center; margin-top:20px;">
+                <h3><b>สิ่งที่ประชาชนอยากให้แก้ไขในด้านนี้</b></h3>
+                <p style="font-size:18px;">1. อยากให้ Sex Toys ถูกกฎหมาย 35%<br>2. กฎหมายจัดระเบียบการค้าประเวณี 30%<br>3. พื้นที่เสรีภาพเรื่องเพศ 25%<br>4. สร้างบทลงโทษที่มากขึ้น 10%</p>
+            </div>
         </div>
     </div>
     <script>
@@ -1554,9 +1567,17 @@
         }
 
         const bgpd = document.getElementById("budget-per-district");
+        const tdc = document.getElementById("tdc");
+        const tdc_1 = document.getElementById("tdc_1");
         bgpd.addEventListener("click", () => {
             bgpd.style.transform = "translateX(-200px)"
             bgpd.style.transitionDuration = "1s"
+            tdc.style.visibility = "visible"
+            tdc.style.transform = "translateX(10px)"
+            tdc.style.transitionDuration = "1s"
+            tdc_1.style.visibility = "visible"
+            tdc_1.style.transform = "translateY(-10px)"
+            tdc_1.style.transitionDuration = "1s"
         });
 
         const popup = document.getElementById("popup");
@@ -1600,19 +1621,19 @@
             },
             yAxis: {
                 type: 'category',
-                data: ['สำนักโยธา', 'สำนักการระบายน้ำ', 'สำนักสิ่งแวดล้อม', 'สำนักการจราจรและขนส่ง', 'สำนักการแพทย์', 'สำนักอนามัย']
+                data: ['สำนักการศึกษา', 'สำนักปลัดกรุงเทพมหานคร', 'สำนักวัฒนธรรม กีฬา และการท่องเที่ยว', 'สำนักอนามัย', 'สำนักการคลัง', 'สำนักการแพทย์', 'สำนักการจราจรและขนส่ง', 'สำนักสิ่งแวดล้อม', 'สำนักการระบายน้ำ', 'สำนักการโยธา']
             },
             series: [
                 {
                     name: '2562',
                     type: 'bar',
-                    data: [1000, 1200, 1400, 1600, 1800, 2000],
+                    data: [1241703800, 1252316900, 1397374600, 2474279800, 3606450400, 4124634800, 4327231000, 7542229000, 8213452000, 9229858000],
                     barGap: 0
                 },
                 {
                     name: '2563',
                     type: 'bar',
-                    data: [1200, 1300, 1400, 1500, 1800, 1800],
+                    data: [960272300, 868631400, 1401947600, 2403192000, 3754118000, 3739117300, 3036354000, 7052925000, 3533341060, 9900207280],
                     barGap: 0
                 }
             ],
@@ -1636,13 +1657,13 @@
             },
             yAxis: {
                 type: 'category',
-                data: ['ทางเท้า', 'ขนส่งสาธารณะ', 'ขยะ', 'การศึกษา', 'ความปลอดภัย', 'ควัน', 'ฝุ่น', 'รถติด', 'ยาเสพติด', 'น้ำท่วม']
+                data: ['ขยะ', 'น้ำท่วม', 'การท่องเที่ยว', 'การแพทย์', 'การศึกษา', 'อากาศ', 'SEX', 'ถนน', 'ความปลอดภัย', 'ขนส่งสาธารณะ']
             },
             xAxis: {
                 type: 'value'
             },
             series: [{
-                data: [20272, 22573, 43008, 53796, 56955, 69479, 71354, 72552, 91656, 95631],
+                data: ['30911', '35771', '81549', '87034', '100387', '108695', '116385', '135630', '153237', '162546'],
                 type: 'bar',
                 barWidth: '60%',
             }],
@@ -1675,7 +1696,32 @@
             },
             yAxis: {
                 type: 'category',
-                data: ['สำนักโยธา', 'สำนักการระบายน้ำ', 'สำนักสิ่งแวดล้อม', 'สำนักการจราจรและขนส่ง', 'สำนักการแพทย์', 'สำนักอนามัย']
+                data: ['การศึกษา', 'ปลัดกรุงเทพมหานคร', 'วัฒนธรรม กีฬา และการท่องเที่ยว', 'อนามัย', 'การคลัง', 'การแพทย์', 'จราจรและขนส่ง', 'สิ่งแวดล้อม', 'การระบายน้ำ', 'การโยธา'],
+                name: 'สำนัก',
+            },
+            xAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: [1241703800, 1252316900, 1397374600, 2474279800, 3606450400, 4124634800, 4327231000, 7542229000, 8213452000, 9229858000],
+                type: 'bar',
+                barWidth: '75%',
+            }],
+            color: ["#d8d3cd"]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+
+        var dom = document.getElementById("bg-bangrak");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            yAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
             },
             xAxis: {
                 type: 'value'
@@ -1683,8 +1729,155 @@
             series: [{
                 data: [120, 200, 150, 80, 70, 110, 130],
                 type: 'bar'
-            }],
-            color: ["#e2d7de"]
+            }]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+
+        var dom = document.getElementById("pb-bangrak");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            yAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            xAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: [120, 200, 150, 80, 70, 110, 130],
+                type: 'bar'
+            }]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend: {
+                data: ['SEX', 'ความปลอดภัย', 'ถนน', 'ระบบขนส่งสาธารณะ', 'การศึกษา', 'การแพทย์',
+                    'น้ำท่วม', 'อากาศ', 'การท่องเที่ยว', 'ขยะ', 'แห้ง', 'เศรษฐกิจไม่ดี',
+                    'ต้นไม้', 'ทางเท้า', 'แออัด', 'คนจน', 'การว่างงาน', 'ไฟฟ้า',
+                    'ภัยธรรมชาติ', 'คนไร้บ้าน', 'คนพิการ', 'ยาเสพติด', 'น้ำเสีย',
+                    'ค่าครองชีพ', 'น้ำประปา', 'แว๊น', 'ไม่น่าอยู่', 'ธุรกิจสีเทา']
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                }
+            ],
+            series: [
+                { name: 'SEX', type: 'line', smooth: true,  data: [2563, 2732, 2652, 3344, 4329, 3258, 3577, 16288, 22941, 22453, 20317, 11931] },
+                { name: 'ความปลอดภัย', type: 'line', smooth: true,  data: [9029, 6168, 6886, 5281, 4547, 6261, 16869, 24865, 22541, 17409, 17987, 15394] },
+                { name: 'ถนน', type: 'line', smooth: true,  data: [6428, 4416, 4590, 4447, 3528, 5007, 15541, 23554, 20501, 15940, 14625, 17053] },
+                { name: 'ระบบขนส่งสาธารณะ', type: 'line', smooth: true,  data: [9982, 5789, 7164, 7862, 6144, 10106, 19084, 20486, 19241, 19510, 17919, 19259] },
+                { name: 'การศึกษา', type: 'line', smooth: true,  data: [5322, 4480, 4247, 2519, 2955, 3310, 12879, 16107, 15727, 12103, 10841, 9897] },
+                { name: 'การแพทย์', type: 'line', smooth: true,  data: [2841, 2544, 3386, 2493, 2395, 2867, 11971, 14165, 12400, 12286, 10111, 9575] },
+                { name: 'น้ำท่วม', type: 'line', smooth: true,  data: [1292, 703, 783, 755, 978, 6511, 3250, 2785, 11737, 3452, 2077, 1448] },
+                { name: 'อากาศ', type: 'line', smooth: true,  data: [44039, 14243, 4976, 2073, 1175, 1422, 4100, 6089, 9620, 8433, 5560, 6965] },
+                { name: 'การท่องเที่ยว', type: 'line', smooth: true,  data: [3237, 2721, 3292, 2905, 2501, 3209, 10378, 10700, 8424, 11610, 11102, 11470] },
+                { name: 'ขยะ', type: 'line', smooth: true,  data: [1519, 940, 1124, 656, 1591, 2773, 3527, 3293, 4917, 4150, 3558, 2863] },
+                { name: 'แห้ง', type: 'line', smooth: true,  data: [45, 37, 39, 44, 41, 80, 414, 270, 2660, 537, 207, 194] },
+                { name: 'เศรษฐกิจไม่ดี', type: 'line', smooth: true,  data: [630, 795, 815, 592, 595, 715, 1857, 1694, 2542, 1925, 2223, 1891] },
+                { name: 'ต้นไม้', type: 'line', smooth: true,  data: [1871, 1111, 943, 796, 1243, 920, 2420, 2486, 2352, 2863, 2568, 2329] },
+                { name: 'ทางเท้า', type: 'line', smooth: true,  data: [565, 681, 427, 1175, 1083, 1078, 1863, 2261, 2285, 2171, 1424, 1221] },
+                { name: 'แออัด', type: 'line', smooth: true,  data: [503, 212, 349, 335, 274, 871, 1909, 2057, 1662, 796, 570, 509] },
+                { name: 'คนจน', type: 'line', smooth: true,  data: [664, 611, 1150, 488, 468, 568, 1289, 1520, 1251, 1393, 1266, 1390] },
+                { name: 'การว่างงาน', type: 'line', smooth: true,  data: [695, 939, 1105, 560, 720, 499, 1694, 2097, 965, 1335, 650, 547] },
+                { name: 'ไฟฟ้า', type: 'line', smooth: true,  data: [437, 391, 432, 536, 437, 645, 958, 815, 939, 1109, 739, 956] },
+                { name: 'ภัยธรรมชาติ', type: 'line', smooth: true,  data: [45, 9, 16, 15, 15, 31, 61, 111, 883, 66, 71, 69] },
+                { name: 'คนไร้บ้าน', type: 'line', smooth: true,  data: [47, 27, 35, 36, 55, 30, 72, 66, 781, 107, 95, 209] },
+                { name: 'คนพิการ', type: 'line', smooth: true,  data: [175, 200, 182, 146, 199, 182, 696, 899, 630, 544, 479, 705] }
+            ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+
+        var dom = document.getElementById("container-1");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            legend: {
+                data: ['SEX', 'ความปลอดภัย', 'ถนน', 'ระบบขนส่งสาธารณะ', 'การศึกษา', 'การแพทย์',
+                    'น้ำท่วม', 'อากาศ', 'การท่องเที่ยว', 'ขยะ', 'แห้ง', 'เศรษฐกิจไม่ดี',
+                    'ต้นไม้', 'ทางเท้า', 'แออัด', 'คนจน', 'การว่างงาน', 'ไฟฟ้า',
+                    'ภัยธรรมชาติ', 'คนไร้บ้าน', 'คนพิการ', 'ยาเสพติด', 'น้ำเสีย',
+                    'ค่าครองชีพ', 'น้ำประปา', 'แว๊น', 'ไม่น่าอยู่', 'ธุรกิจสีเทา']
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                }
+            ],
+            series: [
+                { name: 'SEX', type: 'line', smooth: true,  data: [2563, 2732, 2652, 3344, 4329, 3258, 3577, 16288, 22941, 22453, 20317, 11931] },
+            ]
         };
         ;
         if (option && typeof option === "object") {
